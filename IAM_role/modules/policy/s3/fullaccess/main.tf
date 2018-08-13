@@ -3,6 +3,7 @@
 #or defined by another separate Terraform configuration.
 # Thanks to terraform docs https://www.terraform.io/docs/configuration/data-sources.html
 # so we are using this data soure to call the data into aws_iam_policy resource
+
 data "aws_iam_policy_document" "s3_full_access" {
   statement {
     "effect"="Allow",
