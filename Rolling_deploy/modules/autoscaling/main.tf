@@ -1,3 +1,7 @@
+#This resource is used to create new luanch configuration with all the provided values. 
+#This luanch configuration has lifecycle policy "create_before_destroy = true" 
+#so, that it will first create the new luanch configuration befor it destroies the older one.
+
 resource "aws_launch_configuration" "ec2-launch-configuration" {
     name_prefix                 = "${terraform.workspace}-"
     image_id                    = "${var.ami_ID}"
@@ -17,7 +21,10 @@ resource "aws_launch_configuration" "ec2-launch-configuration" {
     }
 }
 
-# This is the Auto scaling group for ec2 instance
+#This resource is used to create new autoscaling group with all the provided values.
+#This autoscaling group has lifecycle policy "create_before_destroy = true" 
+#so, that it will first create the new autoscaling group befor it destroies the older one. 
+#And also it uses newly created luanch configuration
 
 resource "aws_autoscaling_group" "ec2-autoscaling-group" {
     name_prefix                 = "${terraform.workspace}-${var.ami_ID}"
