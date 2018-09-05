@@ -6,7 +6,7 @@ resource "aws_launch_configuration" "ec2-launch-configuration" {
     name_prefix                 = "${terraform.workspace}-"
     image_id                    = "${var.ami_id}"
     instance_type               = "${var.instance_type}"
-    security_groups             = ["${split(",", var.security_group)}"]
+    security_groups             = ["${split(",", var.security_groups)}"]
     key_name                    = "${var.key_pair}"
     iam_instance_profile        = "${var.instance_profile}"
 
