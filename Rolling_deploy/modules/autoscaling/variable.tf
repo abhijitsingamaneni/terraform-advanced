@@ -1,12 +1,12 @@
-variable "ami_ID" {
+variable "ami_id" {
   description = "ami_id from which to create ec2 instance"
 }
 
-variable "type" {
+variable "instance_type" {
   description = "type of ec2 instance"
 }
 
-variable "key" {
+variable "key_pair" {
   description = "key that you want to use"
 }
 
@@ -14,19 +14,15 @@ variable "grace_period" {
   description = "time to allow the instances to be identifed"
 }
 
-variable "elb_capacity" {
-  description = "capacity of instances"
-}
-
 variable "desired_capacity" {
-  description =  "desired capacity of instances"
+  description =  "desired capacity of instances with this autoscaling group"
 }
 
-variable "min_instance_size" {
+variable "min_instances" {
   description =  "min no of instances"
 }
 
-variable "max_instance_size" {
+variable "max_instances" {
   description =  "max no of instances"
 }
 
@@ -34,22 +30,18 @@ variable "instance_profile" {
   description = "instance profile that we need to use on the instance"
 }
 
-variable "health_check" {
-  description = "type of health check that should be used"
+variable "health_check_type" {
+  description = "type of health check that should be used(ec2 or elb)"
 }
 
 variable "subnets" {
-  description = "subnet in which ec2 instance are present"
+  description = "subnet in which ec2 instances should be present"
 }
 
 variable "security_group" {
-  description = "security group in which ec2 instance is present"
+  description = "security group to which ec2 instance should be attached"
 }
 
-variable "lb" {
-  description = "load balancer to attach"
-}
-
-variable "default_tags" {
-  type = "list"
+variable "loadbalancer" {
+  description = "load balancer to ec2 instance of the auto scaling group should be attached"
 }
