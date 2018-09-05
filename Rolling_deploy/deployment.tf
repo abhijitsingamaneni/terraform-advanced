@@ -14,7 +14,7 @@ module "deployment" {
   max_instance      = "${var.max_instances}"
   instance_profile  = "${var.instance_profile}"
   health_check_type = "${var.health_check_type}"
-  subnets           = "${var.subnets_group}"
-  security_group    = "${var.security_group}"
+  subnets           = "${var.subnets}"
+  security_groups    = "${var.security_groups}"
   loadbalancer      = "${var.loadbalancer}"
 }
