@@ -4,7 +4,7 @@ provider "aws" {
 
 module "deployment" {
   source            = "./modules/autoscaling"
-  ami_ID            = "${var.ami_id}"
+  ami_id            = "${var.ami_id}"
   key_pair          = "${var.key_pair}"
   instance_type     = "${var.instance_type}"
   grace_period      = "${var.grace_period}"
