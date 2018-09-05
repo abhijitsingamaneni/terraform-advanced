@@ -38,7 +38,7 @@ variable "subnets" {
   description = "subnet in which ec2 instances should be present"
 }
 
-variable "security_group" {
+variable "security_groups" {
   description = "security group to which ec2 instance should be attached"
 }
 
